@@ -1,2 +1,5 @@
 # rollouts-onboarding-deploy-fixture
-Temporary fixture: GitHub Actions deploy of the web app. Safe to delete.
+
+Temporary public fixture for Rollouts onboarding. Production deploys of the web app run in GitHub Actions (`.github/workflows/deploy.yml`) to the `production` environment via Vercel.
+
+Safe to delete.

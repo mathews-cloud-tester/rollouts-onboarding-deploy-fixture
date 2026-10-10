@@ -1,0 +1,17 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    name: production
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy web
+        run: npx --yes vercel@39.2.5 deploy --prod --yes
+        env:
+          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
